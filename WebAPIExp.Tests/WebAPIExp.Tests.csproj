@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4B8A33F7-46C7-4F85-AA26-8736A12BF58B}</ProjectGuid>
+    <ProjectGuid>{8E11F164-21F3-4736-852E-912751402A28}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WebAPIExp.Tests</RootNamespace>
@@ -54,9 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebAPIExp\WebAPIExp.csproj">
-      <Project>{28C9EAC7-A4F4-4351-8F01-D102C64C4CD4}</Project>
+      <Project>{BB175716-56BA-43E3-A4DA-2C247C60C390}</Project>
       <Name>WebAPIExp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

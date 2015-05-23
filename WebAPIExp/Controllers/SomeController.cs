@@ -1,4 +1,5 @@
-﻿using DataLayer.Interfaces;
+﻿using DataLayer.Entities;
+using DataLayer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,21 +11,23 @@ namespace WebAPIExp.Controllers
 {
     public class SomeController : ApiController
     {
+        private IMySvcRepository _repo;
+
         public SomeController(IMySvcRepository r)
         {
-
+            _repo = r;
         }
 
         // GET: api/Some
-        public IEnumerable<string> Get()
+        public IEnumerable<User> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _repo.GetUsers();
         }
 
         // GET: api/Some/5
-        public string Get(int id)
+        public User Get(int id)
         {
-            return "value";
+            return _repo.GetUser(id);
         }
 
         // POST: api/Some

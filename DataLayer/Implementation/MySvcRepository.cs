@@ -1,4 +1,5 @@
 ﻿using DataLayer.Entities;
+using DataLayer.EntityFramework;
 using DataLayer.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,21 @@ namespace DataLayer.Implementation
 {
     public class MySvcRepository : IMySvcRepository
     {
+        DataContext _db;
+
+        public MySvcRepository(string connectionString)
+        {
+            _db = new DataContext(connectionString);
+        }
+
         public List<User> GetUsers()
         {
-            throw new NotImplementedException();
+            return _db.Users.ToList();
+        }
+
+        public User GetUser(int id)
+        {
+            return _db.Users.Where(o => o.Id == id).FirstOrDefault();
         }
     }
 }
