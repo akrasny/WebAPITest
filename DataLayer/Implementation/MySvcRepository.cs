@@ -27,5 +27,16 @@ namespace DataLayer.Implementation
         {
             return _db.Users.Where(o => o.Id == id).FirstOrDefault();
         }
+
+
+        public List<Order> GetOrders(int userid)
+        {
+            return _db.Orders.Where(o => o.UserId == userid).ToList();
+        }
+
+        public Order GetOrder(int userid, int id)
+        {
+            return _db.Orders.Where(o => o.Id == id && o.UserId == userid).FirstOrDefault();
+        }
     }
 }

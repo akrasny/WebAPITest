@@ -21,5 +21,14 @@ namespace DataLayer.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         User GetUser(int id);
+
+        /// <summary>
+        /// Get Orders
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <returns></returns>
+        List<Order> GetOrders(int userid);
+
+        Order GetOrder(int userid, int id);
     }
 }

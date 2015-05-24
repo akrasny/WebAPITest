@@ -9,11 +9,11 @@ using System.Web.Http;
 
 namespace WebAPIExp.Controllers
 {
-    public class SomeController : ApiController
+    public class UserController : ApiController
     {
         private IMySvcRepository _repo;
 
-        public SomeController(IMySvcRepository r)
+        public UserController(IMySvcRepository r)
         {
             _repo = r;
         }
@@ -25,9 +25,9 @@ namespace WebAPIExp.Controllers
         }
 
         // GET: api/Some/5
-        public User Get(int id)
+        public User Get(int userid)
         {
-            return _repo.GetUser(id);
+            return _repo.GetUser(userid);
         }
 
         // POST: api/Some

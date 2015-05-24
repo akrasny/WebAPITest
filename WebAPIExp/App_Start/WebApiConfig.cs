@@ -15,9 +15,15 @@ namespace WebAPIExp
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                name: "Users",
+                routeTemplate: "users/{userid}",
+                defaults: new { controller = "user", userid = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "Orders",
+                routeTemplate: "users/{userid}/orders/{id}",
+                defaults: new { controller = "order", id = RouteParameter.Optional }
             );
         }
     }
